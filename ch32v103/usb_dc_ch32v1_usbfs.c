@@ -369,7 +369,7 @@ void USBFS_IRQHandler(void)
 
                         read_count = USBFS_DEVICE->RX_LEN;
 
-                        memcpy(g_ch32_usbfs_udc.out_ep[ep_idx].xfer_buf, &g_ch32_usbfs_udc.ep_databuf[ep_idx - 1][0], read_count);
+                        memcpy(g_ch32_usbfs_udc.out_ep[ep_idx].xfer_buf, &g_ch32_usbfs_udc.ep_databuf[ep_idx][0], read_count);
 
                         g_ch32_usbfs_udc.out_ep[ep_idx].xfer_buf += read_count;
                         g_ch32_usbfs_udc.out_ep[ep_idx].actual_xfer_len += read_count;
